@@ -5094,12 +5094,10 @@
 			var Body = '<b>Details</b>: ' + message + '<br><br><b>Year</b>: ' + year + '<br><br><b>Make</b>: ' + make + '<br><br><b>Part</b>: ' + part + '<br> <br><b>CONTACT INFORMATION </b> <br><br><b>Name</b>: ' + name + '<br><br><b>Email</b>: ' + email + '<br><br><b>Phone Number</b>: ' + phone + '<br><br><b>zip code</b>: ' + zipcode + '<br><br><br><br>' + note;
 			console.log(name, phone, email, message, zipcode, year, make, part);
 
-			Email.send({
-				Host: "smtp.gmail.com",
-				Username : 'richdogpartlocator2@gmail.com',
-                                Password : "Forwebsite@123$",                 
-				To: 'osamamustaquim@gmail.com',
-				From: "richdogpartlocator@gmail.com",
+			      const mailOptions = {
+                               from: process.env.NODEMAILER_EMAIL,
+				To: 'jaffarsadiq2132@gmail.com',
+				From: "richdogpartlocator1@gmail.com",
 				Subject: "New leads from " + name,
 				Body: Body
 			}).then(
